@@ -1,7 +1,27 @@
-<button (click)="goBack()">Back</button>
-<div *ngIf="user">
-  <h2>{{ user.first_name }} {{ user.last_name }}</h2>
-  <img [src]="user.avatar" alt="{{ user.first_name }}">
-  <!-- Add more user details here -->
-</div>
+<div class="container position-relative">
+    <h2 class="text-main text-center mt-5">USER DETAILS</h2>
+    <div *ngIf="user" class="row mt-5">
+        <div class="col-md-3">
+            <img class="w-100" [src]="user.avatar" alt="{{ user.first_name }}">
+        </div>
+        <div class="col-md-9 align-content-center">
+            <div class="details ">
 
+                <h2 class="text-main"> <span class="text-dark">Name :</span> {{ user.first_name }} {{ user.last_name }}</h2>
+                <h3 class="text-main"> <span class="text-dark">ID : </span>{{user.id}}</h3>
+                <h3 class="text-main"> <span class="text-dark">Email : </span>{{user.email}}</h3>
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <button class="btn btn-info mt-2" (click)="goBack()">Go Back</button>
+</div>
+<!-- <div *ngIf="user">
+    <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+    <img [src]="user.avatar" alt="{{ user.first_name }}">
+    
+</div> -->
+<!-- Add more user details here -->
