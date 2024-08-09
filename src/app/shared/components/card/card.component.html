@@ -1,0 +1,21 @@
+<div class="main-cards">
+  <mat-card appHoverHighlight  *ngFor="let user of users" class="user-card">
+    <img
+      mat-card-avatar
+      [src]="user.avatar"
+      alt="{{ user.first_name }} {{ user.last_name }}"
+    />
+    <mat-card-content>
+      <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+      <h6 class="text-secondary">{{ user.email }}</h6>
+      <h6>ID : {{ user.id }}</h6>
+      <button
+        mat-raised-button
+        color="primary"
+        [routerLink]="['/user', user.id]"
+      >
+        View Details
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>

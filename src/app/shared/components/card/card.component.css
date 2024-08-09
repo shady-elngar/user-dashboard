@@ -1,0 +1,45 @@
+.main-cards {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.main-cards .user-card {
+  width: 335px !important;
+  display: flex;
+  padding: 12px;
+  flex-direction: row;
+  height: 195px;
+  transition: all .1s ease;
+  cursor: pointer;
+}
+
+.mat-mdc-card-content {
+  display: block;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.mat-mdc-card-avatar {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-bottom: 16px;
+  object-fit: cover;
+}
+
+
+.user-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button.mat-raised-button:hover {
+  background-color: #3f51b5;
+  color: white;
+}

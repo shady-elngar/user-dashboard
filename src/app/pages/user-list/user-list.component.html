@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <!-- <div class="row gy-4">
+        <div *ngFor="let user of users" class="col-md-4 text-center" (click)="navigateToUser(user.id)">
+         <app-card [user]="user" ></app-card>
+        </div>
+        <div class="col-12">
+            <app-paginator [totalLength]='totalLength' (setPageIndex)="setPageIndex($event)"></app-paginator>
+        </div>
+    </div> -->
+    <app-card [@fadeIn] [users]="users" ></app-card>
+    <app-paginator [totalLength]='totalLength' (setPageIndex)="setPageIndex($event)"></app-paginator>
+
+</div>
+
+<app-spinner [isLoading]="isLoading"></app-spinner>
