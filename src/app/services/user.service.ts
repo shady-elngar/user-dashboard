@@ -13,23 +13,23 @@ export class UserService {
   private userCache = new Map<number, any>();
 
   constructor(private _HttpClient: HttpClient) { }
+getUsers(page: number): Observable<any> {
+  return this._HttpClient.get(`https://dummyjson.com/users?limit=6&skip=${(page - 1) * 6}`);
+}
 
-  getUsers(page: number): Observable<any> {
-    return this._HttpClient.get(`https://reqres.in/api/users?page=${page}`)
+
+
+
+ getUser(id: number): Observable<any> {
+  if (this.userCache.has(id)) {
+    return of(this.userCache.get(id));
+  } else {
+    return this._HttpClient.get<any>(`https://dummyjson.com/users/${id}`).pipe(
+      tap(user => this.userCache.set(id, user)),
+      shareReplay(1)
+    );
   }
+}
 
-
-
-  getUser(id: number): Observable<any> {
-    if (this.userCache.has(id)) {
-      return of(this.userCache.get(id));
-    } else {
-      return this._HttpClient.get<any>(`https://reqres.in/api/users/${id}`).pipe(
-        map((response: any) => response.data),
-        tap(user => this.userCache.set(id, user)),
-        shareReplay(1)
-      );
-    }
-  }
 
 }

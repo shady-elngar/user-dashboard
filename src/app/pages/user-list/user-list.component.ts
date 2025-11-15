@@ -44,7 +44,8 @@ export class UserListComponent implements OnInit {
       .pipe(
         finalize(() => { this.isLoading = false })
       ).subscribe((user: any) => {
-        this.users = user.data;
+        console.log(user)
+        this.users = user.users;
         this.totalLength = user.total
       });
   }

@@ -7,9 +7,9 @@
 }
 
 .main-cards .user-card {
-  width: 335px !important;
+  width: 410px !important;
   display: flex;
-  padding: 12px;
+  padding: 16px;
   flex-direction: row;
   height: 195px;
   transition: all .1s ease;
